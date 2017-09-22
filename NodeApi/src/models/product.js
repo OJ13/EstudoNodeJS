@@ -6,39 +6,40 @@ const Schema = mongoose.Schema;
 const schema = new Schema({
     title: {
         type: String,
-        require: true,  //Obrigatório
+        required: true,  //Obrigatório
         trim: true      //Remove os espaços,antes e depois
     },
     slug: {
         type: String,
-        require: true,
+        required: [ true, "Slug é obrigatório"],
         trim: true,
         index: true,    //vai ter que busca-lo
         unique: true
     },
     description: {
         type: String,
-        require: true
+        required: true
     },
     price: {
         type: Number,
-        require: true
+        required: true
     },
     active: {
         type: Boolean,
-        require: true,
+        required: true,
         default: true    //valor padrão
     },
     tags: [{              //Um array
         type: String,
-        require: true
+        required: true
     }]
 });
 
-//Exemplt do produto
+//Exemplo do produto
 // {
 //     "title": "teste",
 //     "description": "xpto",
+//      ...
 //     "tags" : [
 //         "teste", "123", "X"
 //     ]

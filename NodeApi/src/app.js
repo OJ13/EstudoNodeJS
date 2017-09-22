@@ -8,6 +8,9 @@ let uri = 'mongodb://OJ:teste@ds040017.mlab.com:40017/node_store';
 //Conecta ao banco
 mongoose.connect('mongodb://dev:masterkey@ds040017.mlab.com:40017/node_store', { useMongoClient: true });
 
+//Carregar os Models
+const Product = require('./models/product');
+
 //Carregar as Rotas
 const indexRoutes = require('./routes/indexRoute');
 const productsRoutes = require('./routes/productsRoute');
